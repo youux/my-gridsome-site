@@ -1,5 +1,5 @@
 <template>
-  <Layout>social</Layout>
+  <Layout>社交圈</Layout>
 </template>
 
 <script>

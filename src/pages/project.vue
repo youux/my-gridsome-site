@@ -1,5 +1,5 @@
 <template>
-  <Layout>project</Layout>
+  <Layout>开源项目</Layout>
 </template>
 
 <script>

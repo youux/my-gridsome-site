@@ -1,10 +1,13 @@
 <template>
-  <div> blog {{ $route.params.id }} Page</div>
+  <Layout>博客列表</Layout>
 </template>
 
 <script>
 export default {
   name: 'blog',
+  metaInfo: {
+    title: '博客列表'
+  }
 }
 </script>
 

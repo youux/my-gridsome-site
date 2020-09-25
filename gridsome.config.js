@@ -6,6 +6,7 @@
 
 module.exports = {
   siteName: 'Gridsome',
+  siteDescription: '大前端',
   plugins: [
     {
       use: '@gridsome/source-strapi',

@@ -3,7 +3,6 @@
     <header>
       <h1>{{userInfo.title}}</h1>
       <h2>{{userInfo.subtitle}}</h2>
-      <h2>{{$route.name}}</h2>
       <a :href="'https://github.com/'+userInfo.title" target="_blank" class="btn">GitHub主页</a>
       <a :href="'https://github.com/' + userInfo.title + '/' + userInfo.blog" target="_blank" class="btn">博客源码</a>
     </header>

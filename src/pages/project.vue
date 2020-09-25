@@ -1,12 +1,12 @@
 <template>
-  <div>1111111</div>
+  <Layout>project</Layout>
 </template>
 
 <script>
 export default {
-  name: 'page1',
+  name: 'project',
   metaInfo: {
-    title: 'page1' // 配置header中的title
+    title: '开源项目'
   }
 }
 </script>

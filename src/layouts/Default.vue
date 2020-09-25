@@ -1,17 +1,20 @@
 <template>
   <div>
-    <!-- {{$static.metadata.siteName}} -->
     <header>
-      <h1>Laziji</h1>
-      <h2>欢迎来到辣子鸡的个人博客</h2>
-      <a href="https://github.com/GitHub-youux" target="_blank" class="btn">GitHub主页</a>
-      <a href="https://github.com/GitHub-youux/my-gridsome-site" target="_blank" class="btn">博客源码</a>
+      <h1>{{userInfo.title}}</h1>
+      <h2>{{userInfo.subtitle}}</h2>
+      <h2>{{$route.name}}</h2>
+      <a :href="'https://github.com/GitHub-'+userInfo.title" target="_blank" class="btn">GitHub主页</a>
+      <a :href="'https://github.com/GitHub-' + userInfo.title + '/' + userInfo.blog" target="_blank" class="btn">博客源码</a>
     </header>
 
     <main class="main">
       <aside>
         <el-menu :default-active="activeLink">
-          <el-menu-item v-for="(item,index) in menuList" :key="index" :index="index"><i :class="item.icon"></i>{{item.name}}</el-menu-item>
+          <g-link v-for="(item,index) in menuList" :key="index" :to="item.link">
+            <!-- {{ $static.metadata.siteName }} -->
+            <el-menu-item :index="item.name"><i :class="item.icon"></i>{{item.name}}</el-menu-item>
+          </g-link>
         </el-menu>
       </aside>
       <content>
@@ -22,9 +25,9 @@
     <footer>
       <div class="main">
         <div>
-          © 2020 GitHub-youux&emsp;&emsp;
-          <a href="https://github.com/GitHub-youux" target="_blank">Profile</a>&emsp;&emsp;
-          <a href="https://github.com/GitHub-youux/my-gridsome-site" target="_blank">my-gridsome-site</a>
+          © 2020 GitHub-{{userInfo.title}}&emsp;&emsp;
+          <a :href="'https://github.com/GitHub-' + userInfo.title" target="_blank">Profile</a>&emsp;&emsp;
+          <a :href="'https://github.com/GitHub-' + userInfo.name + '/' + userInfo.blog" target="_blank">{{userInfo.blog}}</a>
         </div>
         <div>
           <i class="el-icon-location-outline"></i>
@@ -39,37 +42,51 @@
   </div>
 </template>
 
-<static-query>
-query {
-  metadata {
-    siteName
-  }
-}
-</static-query>
 
 <script>
+import axios from 'axios'
 export default {
   data () {
     return {
       menuList: [
         {
           name: '最新动态',
-          icon: 'el-icon-star-off'
+          icon: 'el-icon-star-off',
+          link: '/',
+          linkname: 'news'
         },
         {
           name: '社交圈',
-          icon: 'el-icon-mobile-phone'
+          icon: 'el-icon-mobile-phone',
+          link: '/social',
+          linkname: 'social'
         },
         {
           name: '博客列表',
-          icon: 'el-icon-edit-outline'
+          icon: 'el-icon-edit-outline',
+          link: '/blogs',
+          linkname: 'blogs'
         },
         {
           name: '开源项目',
-          icon: 'el-icon-service'
+          icon: 'el-icon-service',
+          link: '/project',
+          linkname: 'project'
         },
       ],
-      activeLink: 0
+      userInfo: {},
+      activeLink: '最新动态'
+    }
+  },
+  created () {
+    // const { data } = await axios.get('http://yjjcode.com:1337/general')
+    // this.userInfo = data
+    console.log(this.$route)
+  },
+  methods: {
+    cutRoute (key) {
+      console.log(key)
+      // this.activeLink = key
     }
   },
 }

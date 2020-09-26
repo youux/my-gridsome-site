@@ -11,7 +11,7 @@ module.exports = {
     {
       use: '@gridsome/source-strapi',
       options: {
-        apiURL: 'http://111.229.92.196:1337',
+        apiURL: 'https://yjjcode.com',
         queryLimit: 1000, // Defaults to 100
         // contentTypes: ['article', 'user'],
         // singleTypes: ['impressum'],

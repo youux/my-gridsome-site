@@ -1,10 +1,10 @@
 <template>
   <div>
     <header>
-      <h1>{{userInfo.title}}</h1>
-      <h2>{{userInfo.subtitle}}</h2>
-      <a :href="'https://github.com/'+userInfo.title" target="_blank" class="btn">GitHub主页</a>
-      <a :href="'https://github.com/' + userInfo.title + '/' + userInfo.blog" target="_blank" class="btn">博客源码</a>
+      <h1>Youux</h1>
+      <h2>我的博客</h2>
+      <a href="https://github.com/youux" target="_blank" class="btn">GitHub主页</a>
+      <a href="https://github.com/youux/my-gridsome-site" target="_blank" class="btn">博客源码</a>
     </header>
 
     <main class="main">
@@ -26,9 +26,9 @@
     <footer>
       <div class="main">
         <div>
-          © 2020 GitHub-{{userInfo.title}}&emsp;&emsp;
-          <a :href="'https://github.com/' + userInfo.title" target="_blank">Profile</a>&emsp;&emsp;
-          <a :href="'https://github.com/' + userInfo.name + '/' + userInfo.blog" target="_blank">{{userInfo.blog}}</a>
+          © 2020 GitHub-Youux&emsp;&emsp;
+          <a href="https://github.com/youux" target="_blank">Profile</a>&emsp;&emsp;
+          <a href="https://github.com/youux/my-gridsome-site" target="_blank">my-gridsome-site</a>
         </div>
         <div>
           <i class="el-icon-location-outline"></i>
@@ -74,10 +74,6 @@ export default {
       userInfo: {},
       activeLink: '最新动态'
     }
-  },
-  async created () {
-    const { data } = await axios.get('http://yjjcode.com:1337/general')
-    this.userInfo = data
   },
   computed: {
     path () {

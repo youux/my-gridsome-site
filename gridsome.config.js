@@ -13,8 +13,8 @@ module.exports = {
       options: {
         apiURL: 'https://yjjcode.com',
         queryLimit: 1000, // Defaults to 100
-        // contentTypes: ['article', 'user'],
-        // singleTypes: ['impressum'],
+        contentTypes: ['news', 'blog', 'project', 'social'],
+        singleTypes: ['general'],
         // Possibility to login with a Strapi user,
         // when content types are not publicly available (optional).
         // loginData: {

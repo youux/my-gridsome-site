@@ -14,3 +14,4 @@ This is the project you get when you run `gridsome create new-project`.
 4. Happy coding 🎉🙌
 
 ### 预览地址：https://my-gridsome-site-livid.vercel.app
+### https://yjjcode.com/admin

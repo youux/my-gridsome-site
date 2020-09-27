@@ -9,10 +9,11 @@
 
 <page-query>
 query{
-  list:strapiBlog (id: 1){
+  list:strapiBlog (tui: true){
     id
     title
     content
+    tui
   }
 }
 </page-query>

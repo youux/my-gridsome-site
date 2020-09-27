@@ -82,6 +82,7 @@ export default {
   }
 }
 </script>
+
 <style>
 a {
   text-decoration: none;
@@ -93,6 +94,7 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.5;
+  background-color: #ebeef5;
 }
 header {
   text-align: center;

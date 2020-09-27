@@ -55,14 +55,14 @@ export default {
           link: '/',
         },
         {
-          name: '社交圈',
-          icon: 'el-icon-mobile-phone',
-          link: '/social',
-        },
-        {
           name: '博客列表',
           icon: 'el-icon-edit-outline',
           link: '/blog',
+        },
+        {
+          name: '社交圈',
+          icon: 'el-icon-mobile-phone',
+          link: '/social',
         },
         {
           name: '开源项目',

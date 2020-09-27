@@ -69,6 +69,11 @@ export default {
           icon: 'el-icon-service',
           link: '/project',
         },
+        {
+          name: '联系我',
+          icon: 'el-icon-chat-square',
+          link: '/contact',
+        },
       ],
       userInfo: {},
       activeLink: '最新动态'

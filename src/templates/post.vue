@@ -8,8 +8,8 @@
 </template>
 
 <page-query>
-query{
-  list:strapiBlog (id: 1){
+query ($id:ID!){
+  list:strapiBlog (id:$id){
     id
     title
     content
@@ -21,9 +21,11 @@ query{
 import MarkdownIt from 'markdown-it'
 import hljs from 'highlight.js'
 export default {
-  name: 'news',
-  metaInfo: {
-    title: '最新动态'
+  name: 'post',
+  metaInfo () {
+    return {
+      title: this.$page.list.title
+    }
   },
   computed: {
     data () {

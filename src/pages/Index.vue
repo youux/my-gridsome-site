@@ -1,19 +1,22 @@
 <template>
   <Layout>
     <el-card shadow="never" class="box-card">
-      <h1 slot="header">{{data.title}}</h1>
-      <div class="text" v-html="mdTohtml(data.content)"></div>
+      <h1 slot="header">{{data.node.title}}</h1>
+      <div class="text" v-html="mdTohtml(data.node.content)"></div>
     </el-card>
   </Layout>
 </template>
 
 <page-query>
 query{
-  list:strapiBlog (tui: true){
-    id
-    title
-    content
-    tui
+  list:allStrapiBlog{
+    edges{
+      node{
+        id
+        title
+        content
+      }
+    }
   }
 }
 </page-query>
@@ -28,7 +31,7 @@ export default {
   },
   computed: {
     data () {
-      return this.$page.list
+      return this.$page.list.edges[0]
     }
   },
   methods: {
